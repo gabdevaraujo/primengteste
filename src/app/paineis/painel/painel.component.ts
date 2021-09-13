@@ -1,5 +1,6 @@
 import { Tipodelixo } from './../model/tipodelixo';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-painel',
@@ -8,11 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PainelComponent implements OnInit {
 
-  tiposDeLixo?: Tipodelixo[];
+  form ?: any;
 
-  tiposSelecionados?: Tipodelixo[];
+  tiposDeLixo: Tipodelixo[] = [];
 
-  constructor() { }
+  tiposSelecionados: Tipodelixo[] = [];
+
+  constructor(private fb: FormBuilder) {
+    this.montaForm();
+  }
 
   ngOnInit() {
     this.tiposDeLixo = [
@@ -23,5 +28,15 @@ export class PainelComponent implements OnInit {
       {code: 5, name: "tipo5"},
     ]
   }
+
+  montaForm(){
+    this.form = this.fb.group({
+      code: [''],
+      name: [''],
+      //situacao: ['ATIVO']
+    })
+  }
+
+
 
 }

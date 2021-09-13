@@ -5,6 +5,7 @@ import { PainelComponent } from './painel.component';
 import {InputTextModule} from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
 import {MultiSelectModule} from 'primeng/multiselect';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import {MultiSelectModule} from 'primeng/multiselect';
     PanelModule,
     InputTextModule,
     CardModule,
-    MultiSelectModule
+    MultiSelectModule,
+    ReactiveFormsModule
   ],
   declarations: [PainelComponent],
   exports: [PainelComponent]

@@ -1,25 +1,34 @@
 <p-card>
 
-  <form action="" formgroup="form">
+  <form action="" [formGroup]="form">
 
     <div class="p-grid">
 
-      <div class="p-col-7">
+      <div class="p-col-12">
         <span class="p-float-label">
-          <input id="float-input" type="text" pInputText lass="p-inputtext-lg">
-          <label for="float-input">Username</label>
+          <input id="float-input" type="text" pInputText class="p-inputtext-lg" formControlName="descricao">
+          <label for="float-input">descricao</label>
         </span>
       </div>
 
-      <div class="p-col-4">
+      <div class="p-col-12">
         <span class="p-float-label">
-          <input id="float-input" type="text" pInputText lass="p-inputtext-lg">
-          <label for="float-input">Username</label>
+          <input id="float-input" type="text" pInputText class="p-inputtext-lg" formControlName="descricao">
+          <label for="float-input">descricao</label>
         </span>
       </div>
+
+      <h5>Chips</h5>
+      <div class="p-col-12">
+          <p-multiSelect [options]="tiposDeLixo" formControlName="tipoDeLixo" optionLabel="name" display="chip"></p-multiSelect>
+      </div>
+
+
+<!-- <p-multiSelect [options]="tiposDeLixo" [(ngModel)]="selectedCities3" defaultLabel="Select a City" optionLabel="name" display="chip"></p-multiSelect> -->
+
 
     </div>
 
   </form>
-
+  {{this.form.getRawValue() | json}}
 </p-card>
